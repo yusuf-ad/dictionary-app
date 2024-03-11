@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply py-14 px-10 md:px-0;
+  }
+
+  .custom-bullet::before {
+    content: "• ";
+    color: theme("colors.purple.500"); /* Change this to your preferred color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
