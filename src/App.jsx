@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import KeywordSection from "./components/KeywordSection";
 import WordDefinition from "./components/WordDefinition";
 import WordSource from "./components/WordSource";
+import { useWordContext } from "./WordContext";
 
 const meanings = [
   `  A civil force granted the legal authority for law enforcement
@@ -14,23 +15,35 @@ const meanings = [
 ];
 
 function App() {
+  const { currentWord, isLoading } = useWordContext();
+
+  const { word, phonetics } = currentWord;
+
   return (
     <Container classes={`max-w-2xl mx-auto`}>
       <Header />
 
-      <Main>
-        <KeywordSection />
+      {isLoading && (
+        <div className="flex justify-center items-center">
+          <div className="animate-spin rounded-full h-14 w-14 border-t-2 border-b-2 mt-12 border-purple-500"></div>
+        </div>
+      )}
 
-        <WordDefinition
-          wordType="noun"
-          meanings={meanings}
-          synonyms={["electronic keyboard"]}
-        />
+      {currentWord && !isLoading && (
+        <Main>
+          <KeywordSection word={word} />
 
-        <WordDefinition wordType="verb" meanings={meanings} />
+          <WordDefinition
+            wordType="noun"
+            meanings={meanings}
+            synonyms={["electronic keyboard"]}
+          />
 
-        <WordSource />
-      </Main>
+          <WordDefinition wordType="verb" meanings={meanings} />
+
+          <WordSource />
+        </Main>
+      )}
     </Container>
   );
 }

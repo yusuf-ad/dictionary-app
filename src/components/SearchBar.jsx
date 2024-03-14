@@ -1,9 +1,21 @@
+import { useWordContext } from "../WordContext";
+
 function SearchBar() {
+  const { getWord } = useWordContext();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const word = e.target.search.value;
+
+    getWord(word);
+  }
+
   return (
-    <div className="relative mt-12">
+    <form onSubmit={handleSubmit} className="relative mt-12">
       <input
         id="search"
-        className="w-full bg-gray-100 py-4 px-6 rounded-xl placeholder:text-black placeholder:font-bold placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 overflow-hidden shadow-sm"
+        className="w-full bg-inputColor py-4 px-6 rounded-xl placeholder:text-textColor placeholder:font-bold placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 overflow-hidden shadow-sm"
         type="text"
         placeholder="Search for any word..."
       />
@@ -17,7 +29,7 @@ function SearchBar() {
           />
         </button>
       </label>
-    </div>
+    </form>
   );
 }
 

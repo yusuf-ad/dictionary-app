@@ -5,6 +5,17 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        inconsolata: ["Inconsolata", "monospace"],
+        lola: ["Lola", "cursive"],
+      },
+      backgroundColor: {
+        bgColor: "rgb(var(--color-background))",
+        inputColor: "rgb(var(--input-background))",
+        primary: "rgb(var(--color-primary))",
+      },
+      textColor: {
+        textColor: "rgb(var(--color-text))",
+        primary: "rgb(var(--color-primary))",
       },
     },
   },

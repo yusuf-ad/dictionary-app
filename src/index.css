@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply py-14 px-10 md:px-0;
+    @apply py-14 px-10 md:px-0 font-sans text-textColor bg-bgColor transition-colors duration-300;
   }
 
   .custom-bullet::before {
@@ -14,5 +16,27 @@
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+  }
+
+  :root,
+  :root[data-theme="light"] {
+    --color-primary: 164 69 237;
+    --color-background: 255 255 255;
+    --input-background: 245 245 245;
+    --color-text: 0 0 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: 5 5 5;
+      --input-background: 31 31 31;
+      --color-text: 255 255 255;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --color-background: 5 5 5;
+    --input-background: 31 31 31;
+    --color-text: 255 255 255;
   }
 }
