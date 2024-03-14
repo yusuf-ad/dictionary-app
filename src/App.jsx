@@ -17,7 +17,7 @@ const meanings = [
 function App() {
   const { currentWord, isLoading } = useWordContext();
 
-  const { word, phonetics } = currentWord;
+  const { meanings } = currentWord;
 
   return (
     <Container classes={`max-w-2xl mx-auto`}>
@@ -31,17 +31,13 @@ function App() {
 
       {currentWord && !isLoading && (
         <Main>
-          <KeywordSection word={word} />
+          <KeywordSection />
 
-          <WordDefinition
-            wordType="noun"
-            meanings={meanings}
-            synonyms={["electronic keyboard"]}
-          />
+          {meanings.map((meaning) => (
+            <WordDefinition key={meaning.partOfSpeech} meaning={meaning} />
+          ))}
 
-          <WordDefinition wordType="verb" meanings={meanings} />
-
-          <WordSource />
+          <WordSource sources={currentWord.sourceUrls} />
         </Main>
       )}
     </Container>
