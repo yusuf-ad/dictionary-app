@@ -4,10 +4,12 @@ import Container from "./components/Container";
 import KeywordSection from "./components/KeywordSection";
 import WordDefinition from "./components/WordDefinition";
 import WordSource from "./components/WordSource";
+import ErrorMessage from "./components/ErrorMessage";
+
 import { useWordContext } from "./WordContext";
 
 function App() {
-  const { currentWord, isLoading } = useWordContext();
+  const { currentWord, isLoading, error } = useWordContext();
 
   const { meanings } = currentWord;
 
@@ -15,23 +17,31 @@ function App() {
     <Container classes={`max-w-2xl mx-auto`}>
       <Header />
 
-      {isLoading && (
-        <div className="flex justify-center items-center">
-          <div className="animate-spin rounded-full h-14 w-14 border-t-2 border-b-2 mt-12 border-purple-500"></div>
-        </div>
-      )}
+      <Main>
+        {isLoading && (
+          <div className="flex justify-center items-center">
+            <div className="animate-spin rounded-full h-14 w-14 border-t-2 border-b-2 mt-12 border-purple-500"></div>
+          </div>
+        )}
 
-      {currentWord && !isLoading && (
-        <Main>
-          <KeywordSection />
+        {!isLoading && error && (
+          <div className="mt-12">
+            <ErrorMessage message={"Something went wrong"} />
+          </div>
+        )}
 
-          {meanings.map((meaning) => (
-            <WordDefinition key={meaning.partOfSpeech} meaning={meaning} />
-          ))}
+        {currentWord && !isLoading && !error && (
+          <>
+            <KeywordSection />
 
-          <WordSource sources={currentWord.sourceUrls} />
-        </Main>
-      )}
+            {meanings.map((meaning, index) => (
+              <WordDefinition key={index} meaning={meaning} />
+            ))}
+
+            <WordSource sources={currentWord.sourceUrls} />
+          </>
+        )}
+      </Main>
     </Container>
   );
 }
