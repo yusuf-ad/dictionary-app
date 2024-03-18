@@ -6,14 +6,6 @@ import WordDefinition from "./components/WordDefinition";
 import WordSource from "./components/WordSource";
 import { useWordContext } from "./WordContext";
 
-const meanings = [
-  `  A civil force granted the legal authority for law enforcement
-      and maintaining public order.`,
-  `       A component of many instruments including the piano, organ, and
-  harpsichord consisting of usually black and white keys that
-  cause different tones to be produced when struck.`,
-];
-
 function App() {
   const { currentWord, isLoading } = useWordContext();
 

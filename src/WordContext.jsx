@@ -15,12 +15,14 @@ function WordContextProvider({ children }) {
       );
       const [data] = await res.json();
 
-      setStatus("success");
       console.log(data);
+
+      setStatus("success");
 
       setCurrentWord(data);
     } catch (err) {
-      console.log(`ERROR 🔥`);
+      console.log(`ERROR 🔥 ` + err.message);
+      console.log(err);
       setStatus("error");
     }
   }
