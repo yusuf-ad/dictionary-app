@@ -1,22 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  @media screen and (max-width: 640px) {
+    html {
+      font-size: 75%;
+    }
+  }
+
   body {
     @apply py-14 px-10 md:px-0 text-textColor bg-bgColor transition-colors duration-300;
   }
 
   /* Necessary for selecting the font family */
-  @font-face {
+  /* @font-face {
     font-family: "Inconsolata, monospace";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: url(/public/fonts/Inconsolata-Regular.ttf);
-  }
+  } */
 
   .custom-bullet::before {
     content: "• ";

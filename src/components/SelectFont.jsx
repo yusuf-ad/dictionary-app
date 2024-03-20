@@ -24,9 +24,16 @@ function SelectFont() {
         ""
       );
 
-      document.body.classList.add(
-        `font-${listItem.textContent.toLowerCase().split(" ").at(0)}`
-      );
+      switch (listItem.textContent.toLowerCase().split(" ").at(0)) {
+        case "sans":
+          document.body.classList.add("font-sans");
+          break;
+        case "inconsolata":
+          document.body.classList.add("font-inconsolata");
+          break;
+        case "lora":
+          document.body.classList.add("font-lora");
+      }
     }
   }
 
@@ -48,7 +55,7 @@ function SelectFont() {
     <div
       ref={button}
       onClick={handleToggle}
-      className="relative flex gap-4 cursor-pointer font-"
+      className="relative flex gap-4 cursor-pointer font-lora"
     >
       <span>{selectedFont}</span>
       <img src="/assets/icon-arrow-down.svg" alt="arrow down icon" />
@@ -56,14 +63,14 @@ function SelectFont() {
       <div
         className={`${
           isOpen ? "absolute" : "hidden"
-        } -left-6 bg-white rounded-md mt-12 z-30 shadow-lg`}
+        } -left-6 bg-inputColor rounded-md mt-12 z-30 shadow-lg shadow-purple-700`}
       >
         <ul onClick={handleSelect} className="py-6 px-8 space-y-2">
           {fontList.map((font, index) => (
             <li
               key={index}
               className={`listItem hover:underline ${
-                selectedFont === font ? "text-purple-700 font-bold" : ""
+                selectedFont === font ? "text-purple-600 font-bold" : ""
               }`}
             >
               {font}
