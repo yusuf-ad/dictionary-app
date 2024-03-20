@@ -7,11 +7,19 @@ import WordSource from "./components/WordSource";
 import ErrorMessage from "./components/ErrorMessage";
 
 import { useWordContext } from "./WordContext";
+import { useEffect } from "react";
 
 function App() {
-  const { currentWord, isLoading, error } = useWordContext();
-
+  const { currentWord, isLoading, error, getWord } = useWordContext();
   const { meanings } = currentWord;
+
+  const word = window.location.pathname.replace("/", "");
+
+  useEffect(() => {
+    if (word) {
+      getWord(word);
+    }
+  }, [word]);
 
   return (
     <Container classes={`max-w-2xl mx-auto`}>

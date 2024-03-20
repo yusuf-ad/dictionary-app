@@ -15,11 +15,11 @@ function WordContextProvider({ children }) {
       );
       const [data] = await res.json();
 
-      console.log(data);
-
       setStatus("success");
 
       setCurrentWord(data);
+
+      window.history.pushState({}, "", "http://localhost:5173/" + word);
     } catch (err) {
       console.log(`ERROR 🔥 ` + err.message);
       console.log(err);

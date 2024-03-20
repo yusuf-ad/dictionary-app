@@ -1,4 +1,5 @@
 import SearchBar from "./SearchBar";
+import SelectFont from "./SelectFont";
 import ToggleDarkMode from "./ToggleDarkMode";
 
 function Header() {
@@ -10,10 +11,7 @@ function Header() {
         </a>
 
         <div className="flex items-center gap-8">
-          <div className="flex gap-4">
-            <span>Sans serif</span>
-            <img src="/assets/icon-arrow-down.svg" alt="arrow down icon" />
-          </div>
+          <SelectFont />
 
           <ToggleDarkMode />
         </div>

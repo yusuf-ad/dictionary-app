@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         inconsolata: ["Inconsolata", "monospace"],
-        lola: ["Lola", "cursive"],
+        lora: ["Lora", "serif"],
       },
       backgroundColor: {
         bgColor: "rgb(var(--color-background))",

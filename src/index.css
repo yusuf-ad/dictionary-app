@@ -6,7 +6,16 @@
 
 @layer base {
   body {
-    @apply py-14 px-10 md:px-0 font-sans text-textColor bg-bgColor transition-colors duration-300;
+    @apply py-14 px-10 md:px-0 text-textColor bg-bgColor transition-colors duration-300;
+  }
+
+  /* Necessary for selecting the font family */
+  @font-face {
+    font-family: "Inconsolata, monospace";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/public/fonts/Inconsolata-Regular.ttf);
   }
 
   .custom-bullet::before {

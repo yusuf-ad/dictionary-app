@@ -1,7 +1,7 @@
 function WordSource({ sources }) {
   return (
-    <div className="border-t-2 pt-4 mt-6">
-      <h4>Source</h4>
+    <div className="border-t-2 pt-4 mt-8">
+      <h4 className="mb-1">Source</h4>
 
       {sources.map((source) => (
         <a
