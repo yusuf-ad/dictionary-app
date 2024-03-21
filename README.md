@@ -30,5 +30,5 @@ To run this project locally, follow these steps:
 2. Install dependencies:
    npm install
 
-3. Start the development server
+3. Start the development server:
    npm run dev
