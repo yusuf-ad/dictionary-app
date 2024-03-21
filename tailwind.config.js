@@ -18,13 +18,13 @@ export default {
         lora: ["Lora", "serif"],
       },
       textColor: {
-        textColor: "rgb(var(--color-text))",
-        primary: "rgb(var(--color-primary))",
+        textColor: withOpacity("--color-text"),
+        primary: withOpacity("--color-primary"),
       },
       backgroundColor: {
-        bgColor: "rgb(var(--color-background))",
-        inputColor: "rgb(var(--input-background))",
-        primary: "rgb(var(--color-primary))",
+        bgColor: withOpacity("--color-background"),
+        inputColor: withOpacity("--input-background"),
+        primary: withOpacity("--color-primary"),
       },
       boxShadowColor: {
         skin: {
