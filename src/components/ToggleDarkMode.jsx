@@ -10,10 +10,8 @@ function ToggleDarkMode() {
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.dataset.theme = "dark";
-      document.documentElement.classList.add = "dark";
     } else {
       document.documentElement.dataset.theme = "light";
-      document.documentElement.classList.remove = "dark";
     }
   });
 
