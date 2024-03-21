@@ -32,7 +32,7 @@ function ToggleDarkMode() {
       >
         <div
           className={`h-5 w-5 absolute bg-white rounded-full top-1/2 -translate-y-1/2 transition-all duration-300 ${
-            isDarkMode ? "translate-x-[26px]" : "translate-x-[2px]"
+            isDarkMode ? "translate-x-[112%]" : "translate-x-[2px]"
           }`}
         ></div>
       </label>

@@ -63,7 +63,7 @@ function SelectFont() {
       <div
         className={`${
           isOpen ? "absolute" : "hidden"
-        } -left-6 bg-inputColor rounded-md mt-12 z-30 shadow-lg shadow-purple-700`}
+        } -left-6 bg-inputColor rounded-md mt-12 z-30 shadow-lg shadow-skin-shadow`}
       >
         <ul onClick={handleSelect} className="py-6 px-8 space-y-2">
           {fontList.map((font, index) => (

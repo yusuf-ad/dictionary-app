@@ -1,5 +1,4 @@
-stilleri başta halletmen lazım ya da çoğunluğunu kafandan değerler verme bir
-reusable sistem oluşturmaya çalış
+"You need to handle the styles first, or don't give most of them values from your head, try to create a reusable system."
 
 const phoneticList =
 phonetics.filter((item) => item.audio || item.text) ?? null;

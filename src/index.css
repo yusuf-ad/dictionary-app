@@ -36,23 +36,26 @@
 
   :root,
   :root[data-theme="light"] {
-    --color-primary: 164 69 237;
-    --color-background: 255 255 255;
-    --input-background: 245 245 245;
-    --color-text: 0 0 0;
+    --color-primary: 164, 69, 237;
+    --color-background: 255, 255, 255;
+    --input-background: 245, 245, 245;
+    --color-text: 0, 0, 0;
+    --color-shadow: 0, 0, 0, 0.2;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --color-background: 5 5 5;
-      --input-background: 31 31 31;
-      --color-text: 255 255 255;
+      --color-background: 5, 5, 5;
+      --input-background: 31, 31, 31;
+      --color-text: 255, 255, 255;
+      --color-shadow: 141, 23, 232;
     }
   }
 
   :root[data-theme="dark"] {
-    --color-background: 5 5 5;
-    --input-background: 31 31 31;
-    --color-text: 255 255 255;
+    --color-background: 5, 5, 5;
+    --input-background: 31, 31, 31;
+    --color-text: 255, 255, 255;
+    --color-shadow: 141, 23, 232;
   }
 }
