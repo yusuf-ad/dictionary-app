@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is a modern, responsive Dictionary Web Application built using React, TailwindCSS, and Context API. It is designed to provide users with fast, reliable dictionary lookups and supports features like dark mode for enhanced usability in different lighting conditions.
+This is a solution to the [Dictionary Web Application](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL) by [frontendmentor.io](https://www.frontendmentor.io) built using React, TailwindCSS, and Context API. It is designed to provide users with fast, reliable dictionary lookups and supports features like dark mode for enhanced usability in different lighting conditions.
 
 ## Features
 
